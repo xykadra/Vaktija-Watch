@@ -1,10 +1,3 @@
-//
-//  VakatAPIService.swift
-//  vaktija-watch
-//
-//  Created by Mirza Kadric on 1. 6. 2025..
-//
-
 import Foundation
 
 struct VakatDTO: Decodable {
@@ -14,8 +7,10 @@ struct VakatDTO: Decodable {
 }
 
 class VakatAPIService {
-    func fetchVakat(completion: @escaping (Result<VakatTime, Error>) -> Void) {
-        guard let url = URL(string: "https://api.vaktija.ba") else {
+    func fetchVakat(for cityIndex: Int, completion: @escaping (Result<VakatTime, Error>) -> Void) {
+        let urlString = "https://api.vaktija.ba/vaktija/v1/\(cityIndex)"
+        
+        guard let url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
         }
@@ -26,23 +21,26 @@ class VakatAPIService {
                 return
             }
 
-            guard let data = data,
-                  let dto = try? JSONDecoder().decode(VakatDTO.self, from: data) else {
-                completion(.failure(URLError(.cannotDecodeContentData)))
+            guard let data = data else {
+                completion(.failure(URLError(.badServerResponse)))
                 return
             }
 
-            let vakat = VakatTime(
-                hijriDate: dto.datum[0],
-                gregorianDate: dto.datum[1],
-                vakats: dto.vakat,
-                location: dto.lokacija
-            )
+            do {
+                let dto = try JSONDecoder().decode(VakatDTO.self, from: data)
+                
+                let vakat = VakatTime(
+                    hijriDate: dto.datum[0],
+                    gregorianDate: dto.datum[1],
+                    vakats: dto.vakat,
+                    location: dto.lokacija
+                )
 
-            completion(.success(vakat))
+                completion(.success(vakat))
+            } catch {
+                completion(.failure(error))
+            }
         }.resume()
     }
-    
-
-    
 }
+

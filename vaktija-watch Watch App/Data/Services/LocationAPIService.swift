@@ -10,8 +10,7 @@ import Foundation
 
 class LocationAPIService {
     func fetchCities(completion: @escaping (Result<[CityDTO], Error>) -> Void) {
-            // Replace with actual API URL
-            // https://api.vaktija.ba/vaktija/v1/lokacije
+       
             guard let url = URL(string: "https://api.vaktija.ba/vaktija/v1/lokacije") else {
                 completion(.failure(URLError(.badURL)))
                 return

@@ -8,27 +8,35 @@
 import SwiftUI
 
 struct EditView: View {
-    @StateObject private var viewModel = VakatViewModel()
+    @EnvironmentObject var settings: SettingsManager
+    
     var body: some View {
         VStack{
             Form{
                 Section{
-                    NavigationLink(destination: SelectCityView()){
+                    NavigationLink(destination: SelectCityView(settingsManager: settings)){
                         VStack(alignment: .leading) {
                             Text("Grad")
-                            Text(viewModel.vakatTime?.location ?? "Vaktija")
+                            Text(settings.selectedCityName)
                                 .foregroundColor(.gray)
                         }
                     }
-                    
-                    
+                                    
                     
                 }
                 Section{
                     NavigationLink(destination: NotificationSettingsView()){
                         VStack(alignment: .leading){
                             Text("Notifikacije")
-                            Text("10 min prije.").foregroundColor(.gray)
+                            if(settings.notificationsEnabled){
+                                Text("\(settings.minutesBeforeNotification) minuta prije")
+                                   .foregroundColor(.gray)
+                            }
+                            else{
+                                Text("Isključeno")
+                                   .foregroundColor(.gray)
+                            }
+
                             
                         }
                     }

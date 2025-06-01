@@ -14,7 +14,14 @@ class SelectCityViewModel: ObservableObject {
     @Published var errorMessage: String?
 
     private let fetchCitiesUseCase = FetchCitiesUseCase()
-
+    private var settingsManager: SettingsManager
+    
+    init(settingsManager: SettingsManager){
+        self.settingsManager = settingsManager
+    
+    }
+    
+    
     func fetchCities() {
         isLoading = true
         errorMessage = nil
@@ -25,6 +32,10 @@ class SelectCityViewModel: ObservableObject {
                 switch result {
                 case .success(let cities):
                     self?.cities = cities
+                    if let selectedID = self?.settingsManager.selectedCityIndex,
+                       let selected = cities.first(where: { $0.id == selectedID }) {
+                        self?.selectedCity = selected
+                    }
                 case .failure(let error):
                     self?.errorMessage = error.localizedDescription
                 }
@@ -33,7 +44,8 @@ class SelectCityViewModel: ObservableObject {
     }
 
     func selectCity(_ city: City) {
-        selectedCity = city
-        // Save to UserDefaults, send back to parent view, etc.
+         selectedCity = city
+        settingsManager.selectedCityName = city.name
+        settingsManager.selectedCityIndex = city.id
     }
 }

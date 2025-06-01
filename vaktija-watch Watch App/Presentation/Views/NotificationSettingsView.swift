@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct NotificationSettingsView: View {
-    @State private var notificationsEnabled = true
-    @State private var selectedMinutesBefore = 10
+
+    @EnvironmentObject var settings: SettingsManager
+    
 
     let minutesOptions = [5, 10, 15, 20, 30, 60]
 
@@ -10,15 +11,15 @@ struct NotificationSettingsView: View {
         Form {
             // Toggle section
             Section {
-                Toggle(isOn: $notificationsEnabled) {
+                Toggle(isOn: $settings.notificationsEnabled) {
                     Text("Notifikacije")
                 }
             }
 
             // Time-before section
-            if notificationsEnabled {
+            if settings.notificationsEnabled {
                 Section(header: Text("Vrijeme")) {
-                    Picker("", selection: $selectedMinutesBefore) {
+                    Picker("", selection: $settings.minutesBeforeNotification) {
                         ForEach(minutesOptions, id: \.self) { minute in
                             Text("\(minute) minuta prije")
                         }

@@ -2,7 +2,8 @@ import SwiftUI
 import WatchKit
 
 struct VakatView: View {
-    @StateObject private var viewModel = VakatViewModel()
+    @EnvironmentObject var viewModel: VakatViewModel
+    @EnvironmentObject var settings: SettingsManager
     @State private var scale: CGFloat = 1.0
     private let prayerNames = ["Zora", "Izlazak Sunca", "Podne", "Ikindija", "Aksam", "Jacija"]
     
@@ -33,7 +34,7 @@ struct VakatView: View {
                                             HStack {
                                                 if isCurrent {
                                                     Circle()
-                                                        .fill(Color.red)
+                                                        .fill(Color.green)
                                                         .frame(width: 8, height: 8)
                                                         .scaleEffect(scale)
                                                         .onAppear {
@@ -88,10 +89,14 @@ struct VakatView: View {
                     }
                 }
             }
-            .navigationTitle(viewModel.vakatTime?.location ?? "Vaktija")
+            .navigationTitle(settings.selectedCityName)
         }
         .onAppear {
-            viewModel.loadVakat()
+            viewModel.loadVakat(for: settings.selectedCityIndex)
+        }
+        .onChange(of: settings.selectedCityIndex) { oldIndex, newIndex in
+            viewModel.loadVakat(for: newIndex)
+            
         }
     }
 }

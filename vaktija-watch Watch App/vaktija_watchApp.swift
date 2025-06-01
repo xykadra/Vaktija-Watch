@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct vaktija_watch_Watch_AppApp: App {
+    @StateObject var settings = SettingsManager();
+    @StateObject var viewModel: VakatViewModel
+    
+    init(){
+        let settingsManager = SettingsManager()
+        _viewModel = StateObject(wrappedValue: VakatViewModel(settings: settingsManager))
+    }
+    
     var body: some Scene {
         WindowGroup {
-            VakatView()
+            VakatView().environmentObject(settings).environmentObject(viewModel)
         }
     }
 }
