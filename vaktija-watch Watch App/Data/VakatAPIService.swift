@@ -42,4 +42,7 @@ class VakatAPIService {
             completion(.success(vakat))
         }.resume()
     }
+    
+
+    
 }

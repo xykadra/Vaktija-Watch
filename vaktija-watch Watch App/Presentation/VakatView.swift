@@ -10,6 +10,7 @@ struct VakatView: View {
         NavigationView {
             ScrollViewReader { proxy in
                 VStack() {
+                    
                     if let vakat = viewModel.vakatTime {
                         
                         Form {
@@ -61,16 +62,27 @@ struct VakatView: View {
                                 }
                                 .id(index)
                             }
-                        }
-                        .onAppear {
-                            if let currentIndex = viewModel.currentVakatIndex(vakats: vakat.vakats) {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                                    proxy.scrollTo(currentIndex, anchor: .top)
-                                    
-                                    WKInterfaceDevice.current().play(.directionUp)
+                            NavigationLink(destination: EditView()){
+                                Label(
+                                    "Uredi", systemImage: "pencil"
+                                ).frame(maxWidth: .infinity).multilineTextAlignment(.center).padding(.vertical, 8).foregroundColor(.blue)
+                            }
+                            
+                            
+                        }.listSectionSpacing(8)
+                            .onAppear {
+                                if let currentIndex = viewModel.currentVakatIndex(vakats: vakat.vakats) {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                        proxy.scrollTo(currentIndex, anchor: .top)
+                                        
+                                        WKInterfaceDevice.current().play(.directionUp)
+                                    }
                                 }
                             }
-                        }
+                        
+                        
+                        
+                        
                     } else {
                         ProgressView()
                     }
@@ -83,4 +95,3 @@ struct VakatView: View {
         }
     }
 }
-
