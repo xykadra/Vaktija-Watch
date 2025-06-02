@@ -24,13 +24,47 @@ class VakatViewModel: ObservableObject {
                     self?.vakatTime = vakat
                     self?.scheduleNotifications(for: vakat)
                     self?.startTimer()
+
+                    // === Save data for Complication ===
+                    let now = Date()
+                    let formatter = Self.formatter // assumed: "HH:mm"
+                    let calendar = Calendar.current
+
+                    // Find next vakat time by converting string to Date
+                    let nextIndex = vakat.vakats.firstIndex { vakatString in
+                        guard let vakatDate = formatter.date(from: vakatString) else { return false }
+
+                        // Combine today's date with vakat time
+                        let fullVakatDate = calendar.date(
+                            bySettingHour: calendar.component(.hour, from: vakatDate),
+                            minute: calendar.component(.minute, from: vakatDate),
+                            second: 0,
+                            of: now
+                        )
+
+                        return fullVakatDate != nil && fullVakatDate! >= now
+                    } ?? vakat.vakats.count - 1 // fallback to last vakat
+
+                    let prayerNames = ["Zora", "Izlazak", "Podne", "Ikindija", "Akšam", "Jačija"]
+
+                    let time = vakat.vakats[nextIndex]
+                    let prayer = prayerNames[nextIndex]
+                    print("Setting time: ", time)
+                    print("Setting prayer: ", prayer)
+                    print("Setting location: ", vakat.location)
+                    SharedDefaults.saveNextVakat(
+                        time: time,
+                        prayer: prayer,
+                        location: vakat.location
+                    )
+
                 case .failure(let error):
                     print("Error fetching vakat: \(error)")
                 }
             }
         }
     }
-    
+
     private func startTimer() {
         timer?.cancel()
         timer = Timer.publish(every: 1, on: .main, in: .common)
@@ -146,5 +180,11 @@ class VakatViewModel: ObservableObject {
                 UNUserNotificationCenter.current().add(request)
             }
         }}
+    
+    private static let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "H:mm"
+        return f
+    }()
 }
 

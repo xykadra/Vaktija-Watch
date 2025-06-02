@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C52C6A0C2DED0E0A00760CD2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C52C6A0B2DED0E0A00760CD2 /* WidgetKit.framework */; };
+		C52C6A0E2DED0E0A00760CD2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C52C6A0D2DED0E0A00760CD2 /* SwiftUI.framework */; };
+		C52C6A192DED0E0B00760CD2 /* VaktijaComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C52C6A092DED0E0A00760CD2 /* VaktijaComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C55D9DDE2DEBBA22001AB943 /* vaktija-watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C55D9DDD2DEBBA22001AB943 /* vaktija-watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C52C6A172DED0E0B00760CD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55D9DD12DEBBA22001AB943 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C52C6A082DED0E0A00760CD2;
+			remoteInfo = VaktijaComplicationExtension;
+		};
 		C55D9DDF2DEBBA22001AB943 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C55D9DD12DEBBA22001AB943 /* Project object */;
@@ -35,6 +45,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C52C6A1E2DED0E0B00760CD2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C52C6A192DED0E0B00760CD2 /* VaktijaComplicationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C55D9E062DEBBA24001AB943 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,15 +70,62 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C52C6A092DED0E0A00760CD2 /* VaktijaComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VaktijaComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C52C6A0B2DED0E0A00760CD2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		C52C6A0D2DED0E0A00760CD2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		C52C6A1F2DED0F5800760CD2 /* VaktijaComplicationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VaktijaComplicationExtension.entitlements; sourceTree = "<group>"; };
 		C55D9DD72DEBBA22001AB943 /* vaktija-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vaktija-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55D9DDD2DEBBA22001AB943 /* vaktija-watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vaktija-watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55D9DEF2DEBBA24001AB943 /* vaktija-watch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vaktija-watch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55D9DF92DEBBA24001AB943 /* vaktija-watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vaktija-watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C52C6A1A2DED0E0B00760CD2 /* Exceptions for "VaktijaComplication" folder in "VaktijaComplicationExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C52C6A082DED0E0A00760CD2 /* VaktijaComplicationExtension */;
+		};
+		C52C6A252DED130400760CD2 /* Exceptions for "vaktija-watch Watch App" folder in "VaktijaComplicationExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Data/Storage/SharedDefaults.swift,
+			);
+			target = C52C6A082DED0E0A00760CD2 /* VaktijaComplicationExtension */;
+		};
+		C52C6A2E2DED1C4000760CD2 /* Exceptions for "Assets.xcassets" folder in "vaktija-watch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"vaktija-logo.png",
+			);
+			target = C55D9DD62DEBBA22001AB943 /* vaktija-watch */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C52C6A0F2DED0E0A00760CD2 /* VaktijaComplication */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C52C6A1A2DED0E0B00760CD2 /* Exceptions for "VaktijaComplication" folder in "VaktijaComplicationExtension" target */,
+			);
+			path = VaktijaComplication;
+			sourceTree = "<group>";
+		};
+		C52C6A2A2DED1BED00760CD2 /* Assets.xcassets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C52C6A2E2DED1C4000760CD2 /* Exceptions for "Assets.xcassets" folder in "vaktija-watch" target */,
+			);
+			path = Assets.xcassets;
+			sourceTree = "<group>";
+		};
 		C55D9DE12DEBBA22001AB943 /* vaktija-watch Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C52C6A252DED130400760CD2 /* Exceptions for "vaktija-watch Watch App" folder in "VaktijaComplicationExtension" target */,
+			);
 			path = "vaktija-watch Watch App";
 			sourceTree = "<group>";
 		};
@@ -74,6 +142,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C52C6A062DED0E0A00760CD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C52C6A0E2DED0E0A00760CD2 /* SwiftUI.framework in Frameworks */,
+				C52C6A0C2DED0E0A00760CD2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C55D9DDA2DEBBA22001AB943 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,12 +175,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C52C6A0A2DED0E0A00760CD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C52C6A0B2DED0E0A00760CD2 /* WidgetKit.framework */,
+				C52C6A0D2DED0E0A00760CD2 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C55D9DD02DEBBA22001AB943 = {
 			isa = PBXGroup;
 			children = (
+				C52C6A2A2DED1BED00760CD2 /* Assets.xcassets */,
+				C52C6A1F2DED0F5800760CD2 /* VaktijaComplicationExtension.entitlements */,
 				C55D9DE12DEBBA22001AB943 /* vaktija-watch Watch App */,
 				C55D9DF22DEBBA24001AB943 /* vaktija-watch Watch AppTests */,
 				C55D9DFC2DEBBA24001AB943 /* vaktija-watch Watch AppUITests */,
+				C52C6A0F2DED0E0A00760CD2 /* VaktijaComplication */,
+				C52C6A0A2DED0E0A00760CD2 /* Frameworks */,
 				C55D9DD82DEBBA22001AB943 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +205,7 @@
 				C55D9DDD2DEBBA22001AB943 /* vaktija-watch Watch App.app */,
 				C55D9DEF2DEBBA24001AB943 /* vaktija-watch Watch AppTests.xctest */,
 				C55D9DF92DEBBA24001AB943 /* vaktija-watch Watch AppUITests.xctest */,
+				C52C6A092DED0E0A00760CD2 /* VaktijaComplicationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +213,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C52C6A082DED0E0A00760CD2 /* VaktijaComplicationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C52C6A1B2DED0E0B00760CD2 /* Build configuration list for PBXNativeTarget "VaktijaComplicationExtension" */;
+			buildPhases = (
+				C52C6A052DED0E0A00760CD2 /* Sources */,
+				C52C6A062DED0E0A00760CD2 /* Frameworks */,
+				C52C6A072DED0E0A00760CD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C52C6A0F2DED0E0A00760CD2 /* VaktijaComplication */,
+				C52C6A2A2DED1BED00760CD2 /* Assets.xcassets */,
+			);
+			name = VaktijaComplicationExtension;
+			packageProductDependencies = (
+			);
+			productName = VaktijaComplicationExtension;
+			productReference = C52C6A092DED0E0A00760CD2 /* VaktijaComplicationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C55D9DD62DEBBA22001AB943 /* vaktija-watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C55D9E072DEBBA24001AB943 /* Build configuration list for PBXNativeTarget "vaktija-watch" */;
@@ -148,10 +262,12 @@
 				C55D9DD92DEBBA22001AB943 /* Sources */,
 				C55D9DDA2DEBBA22001AB943 /* Frameworks */,
 				C55D9DDB2DEBBA22001AB943 /* Resources */,
+				C52C6A1E2DED0E0B00760CD2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C52C6A182DED0E0B00760CD2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C55D9DE12DEBBA22001AB943 /* vaktija-watch Watch App */,
@@ -219,6 +335,9 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					C52C6A082DED0E0A00760CD2 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					C55D9DD62DEBBA22001AB943 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -253,11 +372,19 @@
 				C55D9DDC2DEBBA22001AB943 /* vaktija-watch Watch App */,
 				C55D9DEE2DEBBA24001AB943 /* vaktija-watch Watch AppTests */,
 				C55D9DF82DEBBA24001AB943 /* vaktija-watch Watch AppUITests */,
+				C52C6A082DED0E0A00760CD2 /* VaktijaComplicationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C52C6A072DED0E0A00760CD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C55D9DD52DEBBA22001AB943 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,6 +416,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C52C6A052DED0E0A00760CD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C55D9DD92DEBBA22001AB943 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +447,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C52C6A182DED0E0B00760CD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C52C6A082DED0E0A00760CD2 /* VaktijaComplicationExtension */;
+			targetProxy = C52C6A172DED0E0B00760CD2 /* PBXContainerItemProxy */;
+		};
 		C55D9DE02DEBBA22001AB943 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C55D9DDC2DEBBA22001AB943 /* vaktija-watch Watch App */;
@@ -331,6 +470,69 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C52C6A1C2DED0E0B00760CD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = VaktijaComplicationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79TZ3UW43F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VaktijaComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VaktijaComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-78.vaktija-watch.watchkitapp.VaktijaComplication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		C52C6A1D2DED0E0B00760CD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = VaktijaComplicationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79TZ3UW43F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VaktijaComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VaktijaComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-78.vaktija-watch.watchkitapp.VaktijaComplication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 		C55D9E012DEBBA24001AB943 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -450,6 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "vaktija-watch Watch App/vaktija-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vaktija-watch Watch App/Preview Content\"";
@@ -480,6 +683,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "vaktija-watch Watch App/vaktija-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vaktija-watch Watch App/Preview Content\"";
@@ -620,6 +824,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C52C6A1B2DED0E0B00760CD2 /* Build configuration list for PBXNativeTarget "VaktijaComplicationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C52C6A1C2DED0E0B00760CD2 /* Debug */,
+				C52C6A1D2DED0E0B00760CD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C55D9DD42DEBBA22001AB943 /* Build configuration list for PBXProject "vaktija-watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
