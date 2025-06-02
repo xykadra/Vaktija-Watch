@@ -63,6 +63,11 @@ struct VakatView: View {
                                 }
                                 .id(index)
                             }
+                            NavigationLink(destination: QiblaView()){
+                                Label(
+                                    "Kaaba Lokator", systemImage: "location"
+                                ).frame(maxWidth: .infinity).multilineTextAlignment(.center).padding(.vertical, 8).foregroundColor(.green)
+                            }
                             NavigationLink(destination: EditView()){
                                 Label(
                                     "Uredi", systemImage: "pencil"

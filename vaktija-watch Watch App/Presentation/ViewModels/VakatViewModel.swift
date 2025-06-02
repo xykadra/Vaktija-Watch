@@ -45,7 +45,7 @@ class VakatViewModel: ObservableObject {
                         return fullVakatDate != nil && fullVakatDate! >= now
                     } ?? vakat.vakats.count - 1 // fallback to last vakat
 
-                    let prayerNames = ["Zora", "Izlazak", "Podne", "Ikindija", "Akšam", "Jačija"]
+                    let prayerNames = ["Zora", "Izlazak", "Podne", "Ikindija", "Akšam", "Jacija"]
 
                     let time = vakat.vakats[nextIndex]
                     let prayer = prayerNames[nextIndex]

@@ -57,7 +57,10 @@ struct VakatEntryView: View {
         }
         .padding(8) // Inner padding on the container
         .frame(maxWidth: .infinity, alignment: .leading)
-        .cornerRadius(8) // Optional: rounded corners for container
+        .cornerRadius(8)
+        .containerBackground(for: .widget){
+            Color.green
+        } // Optional: rounded corners for container
         
     }
     
