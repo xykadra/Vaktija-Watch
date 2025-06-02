@@ -70,6 +70,14 @@ A watchOS app that displays Islamic prayer times (Vakat) for selected cities, wi
   <em>Notifications settings with scheduled prayer alerts.</em>
 </p>
 
+
+<p align="left">
+  <img src="https://github.com/user-attachments/assets/563ce745-f916-4a4a-8762-91bb9603b41a" width="239" alt="Scheduled Notification" />
+  <br>
+  <em>Notification alerting user for prayer.</em>
+</p>
+
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e3029106-cfb6-41b1-924a-c4247a446620" width="239" alt="Apple Watch Complication" />
   <br>
